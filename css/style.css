@@ -1,0 +1,362 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+body {
+    background: #fcfafa;
+}
+
+header h1 {
+    background: linear-gradient(90deg, #a362ec 0%, #8f49e0 100%);
+    color: white;
+    padding: 15px;
+    margin-bottom: 30px;
+}
+
+h3 {
+    color: #8f49e0;
+    margin-bottom: 10px;
+    text-align: center;
+    
+}
+
+main {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.leftSide {
+    margin-right: 20px;
+}
+
+.search-section {
+    background-color: white;
+    border-radius: 5px;
+    padding: 20px;
+    padding-top: 8px;
+    margin-bottom: 15px;
+}
+
+::placeholder {
+    color: #c3c5d1;
+}
+
+
+.leftSide .input-section label {
+    font-size: 12px;
+}
+
+input[type=text], input[type=number] {
+    background: #fcfafa;
+    border: 0.5px solid #a362ec;
+    border-radius: 2px;
+    padding-left: 5px;
+    width: 100%;
+}
+
+input[type=text]:focus, input[type=number]:focus {
+    outline: none;
+    border: 0.5px solid black;
+    box-sizing: border-box;
+}
+
+#search-book {
+    display: flex;
+    align-items: flex-end;
+}
+
+#search-book input[type=text] {
+    width: 80%;
+    border-radius: 2px 0 0 2px;
+    border-right: 0;
+}
+
+.btn-search {
+    width: 20%;
+    border: 0.5px solid #a362ec;
+    background-color: white;
+    border-radius: 0 2px 2px 0;
+    font-size: 12px;
+    margin-top: 5px;
+    padding: 0.8px 4px;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.btn-search:hover  {
+    background-color: #8f49e0;
+    color: white;
+}
+
+.book-collection {
+    background-color: white;
+    border-radius: 5px;
+    padding: 20px;
+    padding-top: 8px;
+    margin-bottom: 15px;
+}
+
+.book-collection p {
+    margin-bottom: 2px;
+    font-size: 12px;
+}
+
+.input-section {
+    background-color: white;
+    border-radius: 5px;
+    padding: 20px;
+    padding-top: 8px;
+}
+
+.input-section input {
+    margin-bottom: 5px;
+}
+
+.input-inline {
+    margin-top: 20px;
+    margin-bottom: 6px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.input-inline label:hover, .input-inline input:hover {
+    cursor: pointer;
+}
+
+.input-inline label {
+    margin-right: 5px;
+}
+
+#book-submit {
+    background-color: #a362ec;
+    border: 0.5px solid #a362ec;
+    color: white;
+    border-radius: 2px;
+    font-size: 12px;
+    padding: 1.5px 4px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 3px;
+}
+
+#book-submit:hover {
+    background-color: #8f49e0;
+    color: #f0e9e9;
+} 
+
+#book-shelf #unCompletedSection {
+    background-color: white;
+    width: 250px;
+    border-radius: 5px;
+    padding: 12px;
+    margin-bottom: 15px;
+}
+
+#book-shelf #completedSection {
+    background-color: white;
+    width: 250px;
+    border-radius: 5px;
+    padding: 12px;
+}
+
+.box {
+    overflow: auto;
+    background-color: #fcfafa;
+    border-radius: 3px;
+    margin-top: 12px;
+    padding: 10px;
+}
+
+.box h4 {
+    margin-bottom: 5px;
+}
+
+.box p {
+    margin: 3px 0;
+    font-size: 12px;
+}
+
+.shadow {
+    box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.15);
+}
+
+.btn-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.fa-pen-to-square {
+    color: #c3c5d1;
+    font-size: 16px;
+    margin-right: 7px;
+}
+
+.fa-pen-to-square:hover{
+    cursor: pointer;
+    color: #8f49e0;
+}
+
+.fa-square-check {
+    color: #c3c5d1;
+    font-size: 17px;
+    margin-right: 7px;
+}
+
+.fa-rotate-left {
+    color: #c3c5d1;
+    font-size: 16px;
+    margin-right: 7px;
+}
+
+.fa-trash {
+    color: #c3c5d1;
+    font-size: 16px;
+}
+
+.fa-square-check:hover, .fa-rotate-left:hover {
+    color: rgb(36, 203, 36);
+    cursor: pointer;
+}
+
+.fa-trash:hover {
+    color: rgb(220, 36, 36);
+    cursor: pointer;
+}
+
+.modalBg {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s;
+}
+
+.bg_active {
+    visibility: visible;
+    opacity: 1
+}
+
+#modal {
+    position: relative;
+    background-color: white;
+    width: 50%;
+    border-radius: 5px;
+}
+
+#modal h3 {
+    margin-top: 15px;
+}
+
+#modal label {
+    font-size: 12px;
+}
+
+#update-book {
+    display: flex;
+    justify-content: center;
+}
+
+#btn-update {
+    background-color: #a362ec;
+    border: 0.5px solid #a362ec;
+    color: white;
+    border-radius: 2px;
+    font-size: 12px;
+    padding: 3px 4px;
+    cursor: pointer;
+    width: 25%;
+    margin-top: 15px;
+}
+
+#btn-update:hover {
+    background-color: #8f49e0;
+    color: #f0e9e9;
+}
+
+#modalClose {
+    position: absolute;
+    top: 5px;
+    right: 12px;
+    cursor: pointer;
+}
+
+#modalClose i {
+    font-size: 18px;
+    color: #c3c5d1;
+}
+
+#modalClose i:hover {
+    color: #8f49e0;
+}
+
+
+
+@media  screen and (max-width: 650px) {
+    #modal {
+        position: relative;
+        background-color: white;
+        width: 60%;
+        border-radius: 5px;
+    }
+
+}
+
+@media  screen and (max-width: 550px) {
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header h1 {
+        margin-bottom: 15px;
+    }
+
+    .search-section {
+        width: 330px;
+        margin-bottom: 10px;
+    }
+
+    .book-collection {
+        margin-bottom: 10px;
+    }
+
+    .leftSide {
+        margin-right: 0;
+    }
+
+    #book-shelf {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #book-shelf #unCompletedSection {
+        margin-bottom: 10px;
+    }
+    
+    #modal {
+        position: relative;
+        background-color: white;
+        width: 70%;
+        border-radius: 5px;
+    }
+}
+

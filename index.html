@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="assets/font-awesome/css/all.min.css">
+    <title>Bookshelf Apps</title>
+</head>
+
+<body>
+    <header>
+        <h1>Bookshelf Apps</h1>
+    </header>
+
+    <main>
+        <section class="leftSide container">
+            <section class="search-section shadow">
+                <h3>Cari Buku</h3>
+                <form id="search-book">
+                    <input id="search-book-title" type="text" placeholder="Masukkan judul buku">
+                    <button class="btn-search" id="search-button" type="submit">Cari</button>
+                </form>
+            </section>
+            <section class="book-collection shadow">
+                <h3>Jumlah Koleksi Buku</h3>
+                <div class="read-collection">
+                    <p>Belum dibaca : <span id="unRead-book">0</span></p>
+                    <p>Selesai dibaca : <span id="read-book">0</span></p>
+                </div>
+                <div class="total-collection">
+                    <p>Total jumlah buku : <span id="total-book">0</span></p>
+                </div>
+            </section>
+            <section class="input-section shadow">
+                <h3>Masukkan Buku</h3>
+                <form id="input-book">
+                    <div class="input">
+                        <label for="input-book-title">Judul</label><br>
+                        <input id="input-book-title" type="text" required>
+                    </div>
+                    <div class="input">
+                        <label for="input-book-author">Penulis</label><br>
+                        <input id="input-book-author" type="text" required>
+                    </div>
+                    <div class="input">
+                        <label for="input-book-year">Tahun Terbit</label><br>
+                        <input id="input-book-year" type="number" required>
+                    </div>
+                    <div class="input-inline">
+                        <label for="isCompleted">Selesai Dibaca</label>
+                        <input id="isCompleted" type="checkbox">
+                    </div>
+                    <button class="btn-submit" id="book-submit" type="submit">Masukkan Ke Rak</button>
+                </form>
+            </section>
+        </section>
+
+        <section class="rightSide container" >
+            <section id="book-shelf">
+                <div id="unCompletedSection" class="shadow">
+                    <h3>Belum Dibaca</h3>
+                    <div class="list-item" id="unCompletedBook"></div>
+                </div>
+                
+                <div id="completedSection" class="shadow">
+                    <h3>Selesai Dibaca</h3>
+                    <div class="list-item" id="completedBook"></div>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <div class="modalBg">
+        <div id="modal">
+            <section class="input-section">
+                <h3>Edit Buku</h3>
+                <form id="update-edit-book">
+                    <div class="input">
+                        <label for="update-book-title">Judul</label><br>
+                        <input id="update-book-title" type="text" required>
+                    </div>
+                    <div class="input">
+                        <label for="update-book-author">Penulis</label><br>
+                        <input id="update-book-author" type="text" required>
+                    </div>
+                    <div class="input">
+                        <label for="update-book-year">Tahun Terbit</label><br>
+                        <input id="update-book-year" type="number" required>
+                    </div>
+                    <div id="update-book">
+                        <button id="btn-update" type="submit">Selesai</button>
+                    </div>
+                </form>
+                <span id="modalClose"><i class="fa-solid fa-xmark"></i></span>
+            </section>
+        </div>
+    </div>
+    
+    
+    
+    <script src="js/javascript.js"></script>
+</body>
+</html>
